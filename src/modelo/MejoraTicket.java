@@ -1,5 +1,7 @@
 package modelo;
 
+import java.time.LocalDateTime;
+
 /**
  * Ticket de tipo solicitud de mejora.
  */
@@ -9,6 +11,13 @@ public class MejoraTicket extends Ticket {
     public MejoraTicket(int id, String titulo, String descripcion,
                         Prioridad prioridad, Usuario solicitante, String beneficioEsperado) {
         super(id, titulo, descripcion, prioridad, solicitante);
+        this.beneficioEsperado = beneficioEsperado;
+    }
+
+    public MejoraTicket(int id, String titulo, String descripcion,
+                        Prioridad prioridad, Usuario solicitante, String beneficioEsperado,
+                        LocalDateTime fechaCreacion) {
+        super(id, titulo, descripcion, prioridad, solicitante, fechaCreacion);
         this.beneficioEsperado = beneficioEsperado;
     }
 

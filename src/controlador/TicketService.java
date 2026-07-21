@@ -26,6 +26,7 @@ public class TicketService implements ITicketService {
     public TicketService(RepositorioDatos repositorio, HistorialNotificaciones historial) {
         this.repositorio = repositorio;
         this.historial = historial;
+        this.repositorio.getTickets().forEach(ticket -> ticket.agregarObservador(historial));
     }
 
     @Override
@@ -77,6 +78,7 @@ public class TicketService implements ITicketService {
         if (prioridad != null) {
             ticket.setPrioridad(prioridad);
         }
+        repositorio.guardarDatos();
         historial.actualizar("ACTUALIZACION", "Ticket #" + id + " actualizado");
         return true;
     }
@@ -98,6 +100,7 @@ public class TicketService implements ITicketService {
         }
         Ticket ticket = opt.get();
         ticket.setTecnicoAsignado(tecnico);
+        repositorio.guardarDatos();
         ticket.notificarObservadores("ASIGNACION",
                 "Ticket #" + id + " asignado a " + tecnico.getNombre());
         return true;
@@ -110,6 +113,7 @@ public class TicketService implements ITicketService {
             return false;
         }
         opt.get().avanzarEstado();
+        repositorio.guardarDatos();
         return true;
     }
 
@@ -120,6 +124,7 @@ public class TicketService implements ITicketService {
             return false;
         }
         opt.get().cancelar();
+        repositorio.guardarDatos();
         return true;
     }
 }

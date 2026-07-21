@@ -29,12 +29,17 @@ public abstract class Ticket implements ISujeto {
 
     protected Ticket(int id, String titulo, String descripcion,
                      Prioridad prioridad, Usuario solicitante) {
+        this(id, titulo, descripcion, prioridad, solicitante, LocalDateTime.now());
+    }
+
+    protected Ticket(int id, String titulo, String descripcion,
+                     Prioridad prioridad, Usuario solicitante, LocalDateTime fechaCreacion) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.solicitante = solicitante;
-        this.fechaCreacion = LocalDateTime.now();
+        this.fechaCreacion = fechaCreacion;
         this.estado = new EstadoNuevo();
         if (solicitante != null) {
             agregarObservador(solicitante);

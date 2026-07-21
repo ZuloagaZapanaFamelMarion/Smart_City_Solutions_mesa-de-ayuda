@@ -3,6 +3,13 @@
 
 Aplicación Java orientada a objetos que gestiona tickets de soporte aplicando **patrones GOF**, **principios SOLID** y **patrones GRASP**.
 
+Cuenta con **doble interfaz** sobre la misma lógica de negocio:
+
+- **Interfaz gráfica (Java Swing)** — se ejecuta por defecto. *(Reto adicional de la guía: valor agregado.)*
+- **Interfaz de consola** — menú de texto, disponible con el argumento `consola`.
+
+Ambas usan exactamente el mismo `HelpDeskFacade`, lo que demuestra el bajo acoplamiento: cambiar de consola a Swing no modificó ni una línea de la lógica.
+
 ---
 
 ## Cómo ejecutar en NetBeans
@@ -10,17 +17,20 @@ Aplicación Java orientada a objetos que gestiona tickets de soporte aplicando *
 1. **Archivo → Abrir proyecto…**
 2. Selecciona la carpeta `diseño_de_patrones`
 3. Abre **HelpDesk_SmartCity**
-4. Clic derecho → **Ejecutar** (o `F6`)
+4. Clic derecho → **Ejecutar** (o `F6`) → abre la **ventana Swing**
 
 Guía detallada: `NETBEANS.md`
 
 ## Cómo ejecutar en terminal
 
 ```bash
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
-cd "/Users/marionzuloagazapana/Documents/diseño_de_patrones"
+cd "/Users/marionzuloagazapana/Downloads/diseño_de_patrones"
+
+# Interfaz gráfica (Swing) — por defecto
 ./ejecutar.sh
-# o: ant run
+
+# Interfaz de consola
+./ejecutar.sh consola
 ```
 
 ### Usuarios de prueba
@@ -40,7 +50,7 @@ cd "/Users/marionzuloagazapana/Documents/diseño_de_patrones"
 ```
 src/
 ├── modelo/        → Entidades (Usuario, Ticket y subtipos)
-├── vista/         → Menú consola
+├── vista/         → MenuPrincipal (consola) + VentanaLogin y VentanaPrincipal (Swing)
 ├── controlador/   → TicketService (lógica de negocio)
 ├── interfaces/    → Abstracciones (DIP / ISP)
 ├── singleton/     → SistemaConfig, SesionUsuario
@@ -90,4 +100,37 @@ Alta cohesión, bajo acoplamiento, Controlador (`TicketService` / Facade), Exper
 - Avance / cancelación de estados
 - Validaciones
 - Notificaciones e historial
-- Persistencia en memoria (`ArrayList`)
+- Persistencia en memoria (`ArrayList`) y permanente en `data/helpdesk.json`
+
+---
+
+## Persistencia JSON — reto adicional
+
+La aplicación utiliza **Gson** para guardar usuarios y tickets en
+`data/helpdesk.json`. El archivo se crea automáticamente en la primera ejecución
+y se actualiza después de crear, modificar, eliminar, asignar, avanzar o cancelar
+un ticket.
+
+Al cerrar y volver a abrir la aplicación se conservan:
+
+- usuarios y credenciales de demostración;
+- tickets y sus tipos;
+- prioridad, estado y fecha de creación;
+- solicitante y técnico asignado;
+- el dato específico de INCIDENTE, CONSULTA o MEJORA.
+
+Esto eleva la persistencia de nivel **básico (solo ArrayList)** a nivel
+**intermedio (JSON)** según la guía del proyecto. Los `ArrayList` siguen siendo
+las colecciones de trabajo y el JSON actúa como almacenamiento permanente.
+
+---
+
+## Interfaz gráfica (Java Swing) — reto adicional
+
+La guía del proyecto contempla **Java Swing** como reto adicional que otorga reconocimiento extra. Se implementó sobre la misma arquitectura:
+
+- **`VentanaLogin`** — inicio de sesión con usuarios de prueba a la vista.
+- **`VentanaPrincipal`** — tabla de tickets y botones para todas las operaciones (registrar, actualizar, eliminar, asignar técnico, avanzar estado, cancelar, usuarios, historial).
+- Los permisos del **Proxy** siguen activos: un cliente que intenta eliminar recibe *"Acceso denegado"*, igual que en consola.
+
+Punto clave de diseño: la GUI **no contiene lógica de negocio**, solo llama a `HelpDeskFacade`. Por eso conviven la consola y Swing sin duplicar código (evidencia de **bajo acoplamiento** y patrón **Facade**).

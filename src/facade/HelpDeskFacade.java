@@ -119,6 +119,10 @@ public class HelpDeskFacade {
         historial.mostrarHistorial();
     }
 
+    public List<String> getHistorial() {
+        return historial.getHistorial();
+    }
+
     private Usuario exigirSesion() {
         if (!sesion.haySesionActiva()) {
             throw new IllegalStateException("Debe iniciar sesión primero.");

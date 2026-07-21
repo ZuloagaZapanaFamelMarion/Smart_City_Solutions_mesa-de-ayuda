@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Admin Sistema",
+      "email": "admin@helpdesk.com",
+      "password": "admin123",
+      "rol": "ADMINISTRADOR"
+    },
+    {
+      "id": 2,
+      "nombre": "Ana Técnico",
+      "email": "ana@helpdesk.com",
+      "password": "tec123",
+      "rol": "TECNICO",
+      "especialidad": "Redes"
+    },
+    {
+      "id": 3,
+      "nombre": "Luis Técnico",
+      "email": "luis@helpdesk.com",
+      "password": "tec123",
+      "rol": "TECNICO",
+      "especialidad": "Software"
+    },
+    {
+      "id": 4,
+      "nombre": "María Cliente",
+      "email": "maria@ciudad.com",
+      "password": "cli123",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro Cliente",
+      "email": "pedro@ciudad.com",
+      "password": "cli123",
+      "rol": "CLIENTE"
+    }
+  ],
+  "tickets": []
+}

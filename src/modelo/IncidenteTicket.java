@@ -1,5 +1,7 @@
 package modelo;
 
+import java.time.LocalDateTime;
+
 /**
  * Ticket de tipo incidente (falla / error).
  */
@@ -9,6 +11,13 @@ public class IncidenteTicket extends Ticket {
     public IncidenteTicket(int id, String titulo, String descripcion,
                            Prioridad prioridad, Usuario solicitante, String sistemaAfectado) {
         super(id, titulo, descripcion, prioridad, solicitante);
+        this.sistemaAfectado = sistemaAfectado;
+    }
+
+    public IncidenteTicket(int id, String titulo, String descripcion,
+                           Prioridad prioridad, Usuario solicitante, String sistemaAfectado,
+                           LocalDateTime fechaCreacion) {
+        super(id, titulo, descripcion, prioridad, solicitante, fechaCreacion);
         this.sistemaAfectado = sistemaAfectado;
     }
 
