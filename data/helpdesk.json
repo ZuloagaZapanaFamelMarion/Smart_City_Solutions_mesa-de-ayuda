@@ -38,5 +38,40 @@
       "rol": "CLIENTE"
     }
   ],
-  "tickets": []
+  "tickets": [
+    {
+      "id": 1,
+      "tipo": "INCIDENTE",
+      "titulo": "semafor av.sol",
+      "descripcion": "el semaforo no rsponde",
+      "prioridad": "CRITICA",
+      "solicitanteId": 4,
+      "tecnicoId": 3,
+      "estado": "CERRADO",
+      "fechaCreacion": "2026-07-21T10:49:53.599448",
+      "datoExtra": "demaforos"
+    },
+    {
+      "id": 2,
+      "tipo": "INCIDENTE",
+      "titulo": "falla en semaforo av sol",
+      "descripcion": "no responde",
+      "prioridad": "CRITICA",
+      "solicitanteId": 4,
+      "estado": "CERRADO",
+      "fechaCreacion": "2026-07-21T11:10:24.535384",
+      "datoExtra": "semaforos"
+    },
+    {
+      "id": 3,
+      "tipo": "INCIDENTE",
+      "titulo": "abc",
+      "descripcion": "abc",
+      "prioridad": "ALTA",
+      "solicitanteId": 4,
+      "estado": "CERRADO",
+      "fechaCreacion": "2026-07-21T11:15:18.009222",
+      "datoExtra": "abc"
+    }
+  ]
 }

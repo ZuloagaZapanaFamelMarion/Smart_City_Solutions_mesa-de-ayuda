@@ -21,8 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -78,7 +78,8 @@ public class VentanaPrincipal extends JFrame {
 
         add(new JScrollPane(tabla), BorderLayout.CENTER);
 
-        JPanel botones = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 8));
+        JPanel botones = new JPanel(new GridLayout(2, 5, 8, 8));
+        botones.setBorder(BorderFactory.createEmptyBorder(0, 12, 10, 12));
         botones.add(crearBoton("Registrar ticket", this::registrarTicket));
         botones.add(crearBoton("Actualizar", this::actualizarTicket));
         botones.add(crearBoton("Eliminar", this::eliminarTicket));
