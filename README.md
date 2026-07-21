@@ -65,6 +65,30 @@ src/
 
 ---
 
+## Diagramas UML
+
+### 1. Diagrama de clases principal: Arquitectura + Patrones
+
+![Diagrama de clases principal](docs/uml/01-diagrama-clases-arquitectura.png)
+
+### 2. Modelo de dominio: Herencia + Polimorfismo
+
+![Modelo de dominio](docs/uml/02-modelo-dominio-herencia.png)
+
+### 3. Patrón State — Ciclo de vida del ticket
+
+![Patrón State](docs/uml/03-patron-state.png)
+
+### 4. Patrón Observer
+
+![Patrón Observer](docs/uml/04-patron-observer.png)
+
+### 5. Paquetes del sistema
+
+![Paquetes del sistema](docs/uml/05-paquetes-sistema.png)
+
+---
+
 ## Patrones GOF implementados (6+)
 
 | Patrón | Tipo | Dónde | Problema que resuelve |
