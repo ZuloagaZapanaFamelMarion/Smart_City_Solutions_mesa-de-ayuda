@@ -10,6 +10,10 @@ Cuenta con **doble interfaz** sobre la misma lógica de negocio:
 
 Ambas usan exactamente el mismo `HelpDeskFacade`, lo que demuestra el bajo acoplamiento: cambiar de consola a Swing no modificó ni una línea de la lógica.
 
+> **IMPORTANTE — Video de la exposición del proyecto**  
+> Ver la sustentación completa (15 min) aquí:  
+> **[https://www.youtube.com/watch?v=X0vSXpbGX94](https://www.youtube.com/watch?v=X0vSXpbGX94)**
+
 ---
 
 ## Cómo ejecutar en NetBeans
