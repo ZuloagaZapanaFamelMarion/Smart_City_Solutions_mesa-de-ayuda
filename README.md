@@ -19,7 +19,10 @@ https://1drv.ms/w/c/4eef8a9b913f7f11/IQB4NkGzARFdTJNdx7Z5W2IsAXgt8LeVnU1UDv_xGdo
 
 > **Documentación de proyecto en pdf:** [`docs/Presentacion_HelpDesk_SmartCity.pptx`](https://1drv.ms/w/c/4eef8a9b913f7f11/IQB4NkGzARFdTJNdx7Z5W2IsAXgt8LeVnU1UDv_xGdojzGw?e=MwTztX)
 
+> **Documentación de proyecto en pdf:** [`docs/Presentacion_HelpDesk_SmartCity.pptx`]([diseño_de_patrones.zip](https://github.com/user-attachments/files/30295617/diseno_de_patrones.zip))
+
 ---
+
 ## Cómo ejecutar en NetBeans
 
 1. **Archivo → Abrir proyecto…**
