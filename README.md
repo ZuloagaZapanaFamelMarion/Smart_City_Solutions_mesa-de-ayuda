@@ -13,6 +13,8 @@ Ambas usan exactamente el mismo `HelpDeskFacade`, lo que demuestra el bajo acopl
 > **IMPORTANTE — Video de la exposición del proyecto**  
 > Ver la sustentación completa aquí:  
 > **[https://www.youtube.com/watch?v=X0vSXpbGX94](https://www.youtube.com/watch?v=X0vSXpbGX94)**
+>
+> **Presentación PowerPoint:** [`docs/Presentacion_HelpDesk_SmartCity.pptx`](docs/Presentacion_HelpDesk_SmartCity.pptx)
 
 ---
 
